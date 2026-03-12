@@ -200,7 +200,9 @@
       document.getElementById("user-label").textContent = `You: ${username}`;
 
       // connect WebSocket with query params
-      ws = new WebSocket(`ws://${location.host}/ws?room=${encodeURIComponent(room)}&username=${encodeURIComponent(username)}`);
+      // ws = new WebSocket(`ws://${location.host}/ws?room=${encodeURIComponent(room)}&username=${encodeURIComponent(username)}`);
+      const protocol = location.protocol === "https:" ? "wss:" : "ws:";
+ws = new WebSocket(`${protocol}//${location.host}/ws?room=${encodeURIComponent(room)}&username=${encodeURIComponent(username)}`);
 
       ws.onopen = () => {
         document.getElementById("status").textContent = "Connected ✓";
