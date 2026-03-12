@@ -12,11 +12,11 @@
       display: flex;
       flex-direction: column;
       height: 100vh;
-      height: 100dvh; /* dynamic viewport height — fixes mobile browser bars */
+      height: 100dvh; 
       background: #f0f2f5;
     }
 
-    /* ── Join Screen ── */
+    /*  Join Screen  */
     #join-screen {
       display: flex;
       flex-direction: column;
@@ -64,7 +64,7 @@
       font-size: 13px;
     }
 
-    /* ── Chat Screen ── */
+    /*  Chat Screen  */
     #chat-screen {
       display: none;
       flex-direction: column;
@@ -114,7 +114,7 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
-      /* Smooth momentum scroll on iOS */
+      
       -webkit-overflow-scrolling: touch;
     }
 
@@ -160,7 +160,7 @@
       background: white;
       border-top: 1px solid #e5e7eb;
       flex-shrink: 0;
-      /* Prevent form from being hidden behind mobile keyboard */
+      
       padding-bottom: max(12px, env(safe-area-inset-bottom));
     }
 
@@ -171,7 +171,7 @@
       border-radius: 8px;
       font-size: 15px;
       outline: none;
-      /* Prevent iOS auto-zoom on focus (font-size >= 16px) */
+      
       font-size: 16px;
       min-width: 0;
     }
@@ -193,7 +193,7 @@
     #form button:hover { background: #4338ca; }
     #form button:active { background: #3730a3; }
 
-    /* ── Desktop enhancements ── */
+   
     @media (min-width: 768px) {
       #chat-screen {
         max-width: 760px;
@@ -221,7 +221,7 @@
       }
     }
 
-    /* ── Wide screen: centered card ── */
+  
     @media (min-width: 1024px) {
       body {
         background: #e5e7eb;
@@ -252,7 +252,7 @@
 </head>
 <body>
 
-  <!-- Join Screen -->
+ 
   <div id="join-screen">
     <h2>Nex Chat</h2>
     <input id="username-input" type="text" placeholder="Your username" autocomplete="username" />
@@ -261,7 +261,7 @@
     <button onclick="joinRoom()">Join Room</button>
   </div>
 
-  <!-- Chat Screen -->
+ 
   <div id="chat-screen">
     <div id="chat-header">
       <span id="room-label">Room: </span>
