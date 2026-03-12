@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
+	"os"
 )
 
 func main() {
@@ -11,8 +12,15 @@ func main() {
 
 	mux.HandleFunc("GET /ws", rm.HandleWebSocket)
 	mux.HandleFunc("GET /", handleHome)
+
+	port := os.Getenv("PORT")
+
+	if port == "" {
+		port = "8080"
+	}
+
 	log.Println("Server started on :8080")
-	log.Fatal(http.ListenAndServe(":8080", mux))
+	log.Fatal(http.ListenAndServe(":"+port, mux))
 }
 
 func handleHome(w http.ResponseWriter, r *http.Request) {
